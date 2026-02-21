@@ -5,6 +5,7 @@
     "beautifulsoup",
     "dotenv",
     "filterwarnings",
+    "gemini",
     "genai",
     "importlib",
     "ipykernel",
@@ -62,6 +63,7 @@
   "python.analysis.typeCheckingMode": "basic",
   "python.defaultInterpreterPath": ".venv/bin/python",
   "python.terminal.activateEnvironment": true,
+  "python.terminal.useEnvFile": true,
   "python.testing.pytestArgs": [
     "--import-mode=importlib",
     "-v",
