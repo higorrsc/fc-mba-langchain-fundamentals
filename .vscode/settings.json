@@ -12,6 +12,7 @@
     "ipython",
     "isort",
     "langchain",
+    "LCEL",
     "mypy",
     "Mypy",
     "openai",
