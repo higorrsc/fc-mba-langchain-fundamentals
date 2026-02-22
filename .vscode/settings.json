@@ -15,6 +15,7 @@
     "isready",
     "langchain",
     "LCEL",
+    "mockada",
     "mypy",
     "Mypy",
     "openai",
