@@ -1,4 +1,4 @@
-.PHONY: help check-python venv install-pip export-req install-uv install-uv-prd lint lint-fix type-check test test-cov
+.PHONY: help check-python venv install-pip export-req install-uv install-uv-prd lint lint-fix type-check test test-cov docker-up docker-down
 
 # === Variables ===
 
@@ -47,6 +47,16 @@ install-uv:
 install-uv-prd:
 	$(UV) sync --no-dev
 
+# === Docker Compose ===
+
+# Start services (PGVector)
+docker-up:
+	docker compose up -d
+
+# Stop services
+docker-down:
+	docker compose down
+
 # === Linting / Typing / Tests ===
 
 # Lint and Format Check (Ruff)
@@ -75,3 +85,13 @@ test-cov:
 help:
 	@echo "Available commands:"
 	@echo ""
+	@echo "  make venv           - Create virtual environment"
+	@echo "  make install-uv     - Install dev dependencies using uv"
+	@echo "  make install-uv-prd - Install production dependencies using uv"
+	@echo "  make docker-up      - Start Docker services (PGVector)"
+	@echo "  make docker-down    - Stop Docker services"
+	@echo "  make lint           - Run Ruff check and format check"
+	@echo "  make lint-fix       - Run Ruff check fix and format"
+	@echo "  make type-check     - Run Mypy type checking"
+	@echo "  make export-req     - Export dependencies to requirements.txt"
+	@echo "  make test           - Run tests"
